@@ -1,0 +1,17 @@
+services:
+  goker-ledger:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: goker-ledger
+    restart: unless-stopped
+    environment:
+      - RUST_LOG=info
+    env_file:
+      - .env
+    networks:
+      - goker-network
+
+networks:
+  goker-network:
+    external: true
