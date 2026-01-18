@@ -5,6 +5,8 @@ services:
       dockerfile: Dockerfile
     container_name: goker-ledger
     restart: unless-stopped
+    ports:
+      - "8081:8081"
     environment:
       - RUST_LOG=info
     env_file:
